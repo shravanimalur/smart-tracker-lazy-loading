@@ -45,14 +45,13 @@ class _LazyLoadingState extends State<LazyLoading> {
     var listView = ListView.builder(
         itemCount: items.length+1,//.compareTo(0),
         controller: _scrollController,
-        itemExtent: 80,
+        itemExtent: 60,
         itemBuilder: (context, index){
           if(index == items.length){
             return CupertinoActivityIndicator();
           }
 
           return ListTile(
-
               leading: Icon(Icons.arrow_right),
               title: Text(items[index],
                 style: TextStyle(fontSize: 22.0),),

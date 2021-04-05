@@ -18,25 +18,25 @@ void main() {
           ]),
         ),
         body: tabBar(),
-        floatingActionButton: SpeedDial(
-          // backgroundColor: Colors.lightGreen,
-          closeManually: true,
-          animatedIcon: AnimatedIcons.menu_close,
-          onOpen: () => print("Opening"),
-          onClose: () => print("Closing"),
-          children: [
-            SpeedDialChild(
-                child: Icon(Icons.camera),
-                label: "Camera",
-                onTap: () => print("Camera")
-            ),
-            SpeedDialChild(
-                child: Icon(Icons.image),
-                label: "Gallery",
-                onTap: () => print("Gallery")
-            ),
-          ],
-        ),
+        // floatingActionButton: SpeedDial(
+        //   // backgroundColor: Colors.lightGreen,
+        //   closeManually: true,
+        //   animatedIcon: AnimatedIcons.menu_close,
+        //   onOpen: () => print("Opening"),
+        //   onClose: () => print("Closing"),
+        //   children: [
+        //     SpeedDialChild(
+        //         child: Icon(Icons.camera),
+        //         label: "Camera",
+        //         onTap: () => print("Camera")
+        //     ),
+        //     SpeedDialChild(
+        //         child: Icon(Icons.image),
+        //         label: "Gallery",
+        //         onTap: () => print("Gallery")
+        //     ),
+        //   ],
+        // ),
       ),
     ),
   ));

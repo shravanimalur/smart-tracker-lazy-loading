@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'lazyloading.dart';
-import 'main.dart';
 import 'myTicket.dart';
 import 'searchTicket.dart';
 
