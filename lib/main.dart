@@ -1,43 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app3/myTicket.dart';
 import 'package:flutter_app3/tabBar.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:flutter_app3/teams.dart';
 
 void main() {
   runApp(MaterialApp(
     title: "Exploring UI",
     home: DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
-        drawer: Drawer(),
+        drawer: Drawer(
+          //child: DrawerItems(),
+        ),
         appBar: AppBar(
           title: Text("SMART TRACKER"),
           bottom: TabBar(tabs: [
+            Tab(icon: Icon(Icons.group),text: "My Teams",),
             Tab(icon: Icon(Icons.home),text: "Tickets",),
             Tab(icon: Icon(Icons.search),text: "Search Tickets",),
             Tab(icon: Icon(Icons.favorite),text: "My Tickets",),
           ]),
         ),
         body: tabBar(),
-        // floatingActionButton: SpeedDial(
-        //   // backgroundColor: Colors.lightGreen,
-        //   closeManually: true,
-        //   animatedIcon: AnimatedIcons.menu_close,
-        //   onOpen: () => print("Opening"),
-        //   onClose: () => print("Closing"),
-        //   children: [
-        //     SpeedDialChild(
-        //         child: Icon(Icons.camera),
-        //         label: "Camera",
-        //         onTap: () => print("Camera")
-        //     ),
-        //     SpeedDialChild(
-        //         child: Icon(Icons.image),
-        //         label: "Gallery",
-        //         onTap: () => print("Gallery")
-        //     ),
-        //   ],
-        // ),
       ),
     ),
   ));
+}
+
+class DrawerItems extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // final drawerHeader = DrawerHeader(
+    //   child: Center(child: Text('Chat Application',
+    //     style: TextStyle(
+    //       fontSize: 27,),)),
+    //   decoration: BoxDecoration(
+    //     color: Colors.blue,
+    //
+    //   ),
+    //
+    // );
+
+    return ListView(
+      children: [
+        //drawerHeader,
+        ListTile(
+          title: Text("Chat Application",
+              style: TextStyle(fontSize: 20,)),
+
+          onTap: (){
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => teams()));
+          },
+        ),
+      ],
+    );
+  }
 }

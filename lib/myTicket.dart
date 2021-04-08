@@ -21,3 +21,21 @@ class MyTickets extends StatelessWidget {
     );
   }
 }
+
+// class Button extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       floatingActionButton: FloatingActionButton(
+//           child: Icon(Icons.menu),
+//           onPressed: (){
+//             Navigator.push(
+//                 context,
+//                 MaterialPageRoute(builder: (context) => newMyTicket()));
+//           }
+//       ),
+//       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+//
+//     );
+//   }
+// }
