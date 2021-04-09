@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app3/chatScreen.dart';
 
 class  teams extends StatelessWidget {
   // final int index;
@@ -14,29 +15,29 @@ class  teams extends StatelessWidget {
             ListTile(
               title: Text("Team 1",
                   style: TextStyle(fontSize: 20,)),
-            //   onTap: (){
-            //     Navigator.push(
-            //         context,
-            //         MaterialPageRoute(builder: (context) => chat()));
-            //   },
-             ),
+              onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyHomePage(title: 'Team 1')));
+              },
+            ),
             ListTile(
               title: Text("Team 2",
                   style: TextStyle(fontSize: 20,)),
-              // onTap: (){
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(builder: (context) => teams()));
-              // },
+              onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyHomePage(title: 'Team 2')));
+              },
             ),
             ListTile(
               title: Text("Team 3",
                   style: TextStyle(fontSize: 20,)),
-              // onTap: (){
-              //   Navigator.push(
-              //       context,
-              //       MaterialPageRoute(builder: (context) => teams()));
-              // },
+              onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyHomePage(title: 'Team 3')));
+              },
             ),
           ],
         )
