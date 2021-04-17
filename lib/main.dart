@@ -1,31 +1,68 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/myTicket.dart';
 import 'package:flutter_app3/tabBar.dart';
 import 'package:flutter_app3/teams.dart';
+import 'package:splashscreen/splashscreen.dart';
+
 
 void main() {
-  runApp(MaterialApp(
-    title: "Exploring UI",
-    home: DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        drawer: Drawer(
-          //child: DrawerItems(),
-        ),
-        appBar: AppBar(
-          title: Text("SMART TRACKER"),
-          bottom: TabBar(tabs: [
-            Tab(icon: Icon(Icons.group),text: "My Teams",),
-            Tab(icon: Icon(Icons.home),text: "Tickets",),
-            Tab(icon: Icon(Icons.search),text: "Search Tickets",),
-            Tab(icon: Icon(Icons.favorite),text: "My Tickets",),
-          ]),
-        ),
-        body: tabBar(),
-      ),
-    ),
+  runApp(new MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: new MyApp(),
   ));
 }
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => new _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return new SplashScreen(
+      title: Text(
+        'Smart Tracker',
+        style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+      ),
+      seconds: 4,
+      navigateAfterSeconds: AfterSplash(),
+      //backgroundColor: Colors.white,
+      styleTextUnderTheLoader: new TextStyle(),
+      loaderColor: Colors.black,
+      loadingText: Text("IVIS LAB",
+          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)
+      ),
+    );
+  }
+}
+
+class AfterSplash extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Exploring UI",
+      home: DefaultTabController(
+        length: 4,
+        child: Scaffold(
+          drawer: Drawer(
+            //child: DrawerItems(),
+          ),
+          appBar: AppBar(
+            title: Text("SMART TRACKER"),
+            bottom: TabBar(tabs: [
+              Tab(icon: Icon(Icons.group),text: "My Teams",),
+              Tab(icon: Icon(Icons.home),text: "Tickets",),
+              Tab(icon: Icon(Icons.search),text: "Search Tickets",),
+              Tab(icon: Icon(Icons.favorite),text: "My Tickets",),
+            ]),
+          ),
+          body: tabBar(),
+        ),
+      ),
+    );
+  }
+}
+
 
 class DrawerItems extends StatelessWidget {
   @override
@@ -36,9 +73,7 @@ class DrawerItems extends StatelessWidget {
     //       fontSize: 27,),)),
     //   decoration: BoxDecoration(
     //     color: Colors.blue,
-    //
     //   ),
-    //
     // );
 
     return ListView(
@@ -58,3 +93,5 @@ class DrawerItems extends StatelessWidget {
     );
   }
 }
+
+
