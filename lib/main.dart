@@ -17,20 +17,23 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  final img = Text("By");
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(
-      title: Text(
-        'Smart Tracker',
-        style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
-      ),
-      seconds: 4,
+      // title: Text(
+      //   'Smart Tracker',
+      //   style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
+      // ),
+      image: new Image.asset(
+          'assets/snoo.png'),
+      seconds: 8,
       navigateAfterSeconds: AfterSplash(),
-      //backgroundColor: Colors.white,
       styleTextUnderTheLoader: new TextStyle(),
       loaderColor: Colors.black,
-      loadingText: Text("IVIS LAB",
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)
+      photoSize: 200.0,
+      loadingText: Text("BY IVIS LABS",
+          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0)
       ),
     );
   }
