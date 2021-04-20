@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app3/tabBar.dart';
 import 'package:flutter_app3/teams.dart';
 import 'package:splashscreen/splashscreen.dart';
-
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -17,23 +17,33 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final img = Text("By");
+  void initState(){
+    super.initState();
+    Future.delayed(
+      Duration(seconds: 10),
+        () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context)=>AfterSplash(),
+          )
+        );
+        },
+    );
+  }
   @override
   Widget build(BuildContext context) {
-    return new SplashScreen(
-      // title: Text(
-      //   'Smart Tracker',
-      //   style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
-      // ),
-      image: new Image.asset(
-          'assets/snoo.png'),
-      seconds: 8,
-      navigateAfterSeconds: AfterSplash(),
-      styleTextUnderTheLoader: new TextStyle(),
-      loaderColor: Colors.black,
-      photoSize: 200.0,
-      loadingText: Text("BY IVIS LABS",
-          style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0)
+    return Scaffold(
+      //body: Center(child: Image.asset('assets/both.png',)),
+      body: Column(
+        children: [
+          Spacer(),
+          Image.asset('assets/snoo.png'),
+          Spacer(),
+          //Spacer(),
+          Text("BY",style: TextStyle(fontSize: 20.0),),
+          Image.asset('assets/Ivis Labs.png', width: 150, height: 150,)
+        ],
       ),
     );
   }
