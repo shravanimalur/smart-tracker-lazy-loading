@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/tabBar.dart';
 import 'package:flutter_app3/teams.dart';
+import 'package:flutter_app3/login.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
@@ -25,7 +26,7 @@ class _MyAppState extends State<MyApp> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context)=>AfterSplash(),
+            builder: (context)=>Login(),
           )
         );
         },
@@ -38,7 +39,7 @@ class _MyAppState extends State<MyApp> {
       body: Column(
         children: [
           Spacer(),
-          Image.asset('assets/snoo.png'),
+          Image.asset('assets/st_logo.png'),
           Spacer(),
           //Spacer(),
           Text("BY",style: TextStyle(fontSize: 20.0),),
@@ -69,12 +70,27 @@ class AfterSplash extends StatelessWidget {
               Tab(icon: Icon(Icons.favorite),text: "My Tickets",),
             ]),
           ),
+          // body: Column(
+          //   children: [
+          //     tabBar(),
+          //     buildButton()
+          //   ],
           body: tabBar(),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {},
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         ),
       ),
     );
   }
 }
+
+Widget buildButton() => ElevatedButton(
+  child: Text("Button"),
+  onPressed: (){},
+);
 
 
 class DrawerItems extends StatelessWidget {
