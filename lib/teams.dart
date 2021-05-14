@@ -78,13 +78,14 @@ class _teamsState extends State<teams> {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Authorization':'ivis_token $token'
+          'Authorization':'ivis_token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxMSwiZXhwIjoxNjIwNDAzMDc3fQ.dXNUc77W0RoN-OsvtWc0K4Psoqw8uxxXoldeJuFo6C0'
         }
         //body: msg
     );
     print(msg);
     Map<String, dynamic> user = jsonDecode(res.body);
     print(user);
+    //print(user["data"]);
     if (user["status"] == "success") return user["status"];
 
     return null;

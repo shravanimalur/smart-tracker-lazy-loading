@@ -26,6 +26,7 @@ class _LoginState extends State<Login> {
   final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    var ivis_token = "ivis_token ";
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -172,7 +173,7 @@ class _LoginState extends State<Login> {
     //print(uri);
     final msg = jsonEncode({"emailmobile": username, "password": password});
 
-    var res = await http.post('http://65.1.98.12:5000/fw/login',
+    var res = await http.post('https://backend.ivislabs.com/fw/login',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
@@ -180,8 +181,11 @@ class _LoginState extends State<Login> {
         body: msg);
     print(msg);
     Map<String, dynamic> user = jsonDecode(res.body);
-    print(user);
-    if (user["status"] == "success") return user["status"];
+    var data=user["data"];
+    var token=data["token"];
+    var ivis_token = "ivis_token "+ token;
+    print(user["data"]);
+    if (user["status"] == "success") return ivis_token;
 
     return null;
   }
